@@ -12,6 +12,30 @@
         input {
             min-height: 2.35rem; 
         }
+
+        label {
+            display: block; 
+        }
+
+        .form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.form-control-placeholder {
+  position: absolute;
+  top: 0;
+  padding: 7px 0 0 13px;
+  transition: all 200ms;
+  opacity: 0.5;
+}
+
+.form-control:focus + .form-control-placeholder,
+.form-control:valid + .form-control-placeholder {
+  font-size: 75%;
+  transform: translate3d(0, -100%, 0);
+  opacity: 1;
+}
     </style>
 
 
@@ -33,12 +57,12 @@
                 </div>
             </div>
             <div class="form-group">
-                <span for="birthday mb-1">Date of Birth</span>
-                <div class="form-row">
-                    <div class="form-group col-4">
-                        <label for="bday-month"><small>Month</small></label>
+                <p class="mb-2" id="dobLabel">Date of Birth</p>
+                <div class="form-row" aria-labelledby="Enter your date of birth" aria-describedby="dobHelp">
+                    <div class="form-group mb-0 col-4">
+                        <label class="sr-only" for="bday-month">Month</label>
                         <select class="form-control custom-select" id="bday-month" name="bday-month" autocomplete="section-dob bday-month">
-                            <option selected>Month</option>
+                            <option value="" disabled selected>Month</option>
                             <option value="1">January</option>
                             <option value="2">February</option>
                             <option value="3">March</option>
@@ -53,15 +77,16 @@
                             <option value="12">December</option>
                         </select>
                     </div>
-                    <div class="form-group col-4">
-                        <label for="bday-day"><small>Day</small></label>
-                        <input type="tel" maxlength="2" inputmode="numeric" class="form-control" id="bday-day" name="bday-day" placeholder="XX" autocomplete="section-dob bday-day">
+                    <div class="form-group mb-0 col-4">
+                        <input type="tel" maxlength="2" inputmode="numeric" class="form-control" id="bday-day" name="bday-day" autocomplete="section-dob bday-day" placeholder="Day">
+                        <label class="sr-only" for="bday-day">Day</label>
                     </div>
-                    <div class="form-group col-4">
-                        <label for="bday-year"><small>Year</small></label>
-                        <input type="tel" maxlength="4" inputmode="numeric" class="form-control" id="bday-year" name="bday-year" placeholder="XXXX" autocomplete="section-dob bday-year">
+                    <div class="form-group mb-0 col-4">
+                        <label class="sr-only" for="bday-year">Year</label>
+                        <input type="tel" maxlength="4" inputmode="numeric" class="form-control" id="bday-year" name="bday-year" autocomplete="section-dob bday-year" placeholder="Year">
                     </div>
                 </div>
+                <small id="dobHelp" class="form-text text-muted">Format: Mm/dd/yyyy</small>
             </div>
             <div class="form-group">
                 <label for="emailAddress">Email address</label>
