@@ -36,16 +36,30 @@
                 <span for="birthday mb-1">Date of Birth</span>
                 <div class="form-row">
                     <div class="form-group col-4">
-                        <label for="bday-month text-small"><small>Month</small></label>
-                        <input type="tel" pattern="[0-9]*" maxlength="2" inputmode="numeric" class="form-control" id="bday-month" name="bday-month" placeholder="XX" autocomplete="section-dob bday-month">
+                        <label for="bday-month"><small>Month</small></label>
+                        <select class="form-control custom-select" id="bday-month" name="bday-month" autocomplete="section-dob bday-month">
+                            <option selected>Month</option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
                     </div>
                     <div class="form-group col-4">
                         <label for="bday-day"><small>Day</small></label>
-                        <input type="tel" pattern="[0-9]*" maxlength="2" inputmode="numeric" class="form-control" id="bday-day" name="bday-day" placeholder="XX" autocomplete="section-dob bday-day">
+                        <input type="tel" maxlength="2" inputmode="numeric" class="form-control" id="bday-day" name="bday-day" placeholder="XX" autocomplete="section-dob bday-day">
                     </div>
                     <div class="form-group col-4">
                         <label for="bday-year"><small>Year</small></label>
-                        <input type="tel" pattern="[0-9]*" maxlength="4" inputmode="numeric" class="form-control" id="bday-year" name="bday-year" placeholder="XXXX" autocomplete="section-dob bday-year">
+                        <input type="tel" maxlength="4" inputmode="numeric" class="form-control" id="bday-year" name="bday-year" placeholder="XXXX" autocomplete="section-dob bday-year">
                     </div>
                 </div>
             </div>
@@ -77,7 +91,7 @@
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputState">State</label>
-                    <select id="inputState" class="form-control" name="state" autocomplete="section-info region">
+                    <select id="inputState" class="form-control custom-select" name="state" autocomplete="section-info region">
                         <option>Choose...</option>
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
